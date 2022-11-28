@@ -1,0 +1,11 @@
+.table{
+    
+    /* background: scroll; */
+  position:fixed;
+    align-items: center;
+    flex-direction: column;
+    left:16%;
+    right:0%;
+    display:inline-table;
+    /* justify-content: center; */
+}

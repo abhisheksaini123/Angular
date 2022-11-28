@@ -1,0 +1,37 @@
+
+<div class="table">
+  <p style="color:red">{{message}} </p>
+  <strong>
+    <table>
+      <tr>
+        <td>Name :</td>
+        <td><input [(ngModel)]="form.name" name="name" type="text"></td>
+        &nbsp;&nbsp;
+        <td>Discription :</td>
+        <td><input [(ngModel)]="form.discription" name="discription" type="text"> </td> &nbsp;&nbsp;
+        <td><button (click)="search()">Search</button></td>
+      </tr>
+    </table>
+  </strong>
+  <br>
+  <table style="width: 70%; height:opx 200px ;border:solid black 3px;"
+    class="table table-success table-hover table-bordered border-success">
+    <thead bgcolor="black">
+      <tr style="color: white;">
+        <th scope="col">Name</th>
+        <th scope="col">Discription</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of list">
+        <td>{{e.name}}</td>
+        <td>{{e.discription}}</td>
+
+        <td><button (click)="edit(e.id)" class="btn btn-info glyphicon glyphicon-edit">Edit</button></td>
+        <td><button (click)="delete(e.id)" class="btn btn-danger">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

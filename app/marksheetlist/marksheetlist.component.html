@@ -1,0 +1,43 @@
+<!-- <app-navbar2></app-navbar2> -->
+<div class="table">
+  <p style="color:red">{{message}} </p>
+  <strong>
+    <table>
+      <tr>
+        <td>Roll No :</td>
+        <td><input [(ngModel)]="form.rollNo" name="rollNo" type="text"></td>&nbsp;
+        <td>Name :</td>
+        <td><input [(ngModel)]="form.name" name="name" type="text"> </td>&nbsp;
+        <td><button (click)="search()">Search</button></td>
+      </tr>
+    </table>
+  </strong>
+  <br>
+  <table style="width:70%; height:opx 200px ;border:solid black 3px;"
+    class="table table-success table-hover table-bordered border-success">
+    <thead bgcolor="black">
+      <tr style="color: white;">
+        <th scope="col">ID</th>
+        <th scope="col">Roll NO</th>
+        <th scope="col">Name</th>
+        <th scope="col">Physics</th>
+        <th scope="col">Chemistry</th>
+        <th scope="col">Maths</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of List">
+        <td>{{e.id}}</td>
+        <td>{{e.rollNo}}</td>
+        <td>{{e.name}}</td>
+        <td>{{e.physics}}</td>
+        <td>{{e.chemistry}}</td>
+        <td>{{e.maths}}</td>
+        <td><button (click)="edit(e.id)" class="btn btn-info glyphicon glyphicon-edit">Edit</button></td>
+        <td><button (click)="delete(e.id)" class="btn btn-danger">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

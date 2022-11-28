@@ -1,0 +1,24 @@
+<div class="container">
+    <div *ngIf="success == true; then SUCC else FAIL"></div>
+    <ng-template #SUCC>
+        <p style="color:green">{{message}}</p>
+    </ng-template>
+    <ng-template #FAIL>
+        <p style="color:red">{{message}}</p>
+    </ng-template>
+    <h1 style="overflow:inherit;"><span class="glyphicon glyphicon-user">Add Role</span></h1>
+    <!-- <P style="color: green;">{{message}}</P> -->
+    <form>
+        <div class="form-group">
+            <label>Name:</label>
+            <input [(ngModel)]="form.name" [ngModelOptions]="{standalone: true}" type="text" placeholder="Enter Name"
+                class="form-control" required>
+            <td style="color: red;">{{inputError.name}}</td>
+            <label>Discription</label>
+            <input [(ngModel)]="form.discription" [ngModelOptions]="{standalone: true}" type="text" class="form-control"
+                required>
+            <td style="color: red;">{{inputError.discription}}</td>
+        </div>
+        <button (click)="save()" class="btn btn-primary">Save</button>
+    </form>
+</div>

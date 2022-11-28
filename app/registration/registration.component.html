@@ -1,0 +1,54 @@
+<!-- <app-navbar1></app-navbar1>
+<app-navbar2></app-navbar2> -->
+
+<div class="container">
+
+    <div *ngIf="success == true; then SUCC else FAIL"></div>
+
+    <ng-template #SUCC>
+        <p style="color:green">{{message}}</p>
+    </ng-template>
+
+    <ng-template #FAIL>
+        <p style="color:red">{{message}}</p>
+    </ng-template>
+
+    <h1 style="overflow:inherit;">
+        <span class="glyphicon glyphicon-user">Registration Now</span>
+    </h1>
+    <!-- <P style="color: red;">{{message}}</P> -->
+    <form>
+        <div class="form-group">
+
+            <label>First Name:</label>
+            <span class="glyphicon glyphicon-person"></span>
+            <input [(ngModel)]="form.firstName" name="fname" type="text" class="form-control" required>
+            <span style="color: red;">{{inputError.firstName}}</span>
+
+            <label>Last Name:</label>
+            <span class="glyphicon glyphicon-person"></span>
+            <input [(ngModel)]="form.lastName" name="lname" type="text" class="form-control" required>
+            <span style="color:red">{{inputError.lastName}}</span>
+
+            <label>Email Id:</label>
+            <span class="glyphicon glyphicon-user"></span>
+            <input [(ngModel)]="form.loginId" name="Id" type="text" class="form-control" required>
+            <span style="color:red">{{inputError.loginId}}</span>
+
+            <label>Password:</label>
+            <span class="glyphicon glyphicon-lock"></span>
+            <input [(ngModel)]="form.password" name="pws" type="password" class="form-control" required>
+            <span style="color:red">{{inputError.password}}</span>
+
+            <label>Role Id:</label>
+            <span class="glyphicon glyphicon-log-in"></span>
+            <input [(ngModel)]="form.roleId" name="id" type="text" class="form-control" required>
+            <span style="color:red">{{inputError.roleId}}</span>
+
+
+
+            <button (click)="save()" class="btn btn-primary">Register</button> .
+            <button (click)="login()" class="btn btn-primary">Login</button>
+        </div>
+    </form>
+</div>

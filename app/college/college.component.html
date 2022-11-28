@@ -1,0 +1,29 @@
+<!-- <app-navbar2></app-navbar2> -->
+<div class="container">
+  <div *ngIf="success == true; then SUCC else FAIL"></div>
+<ng-template #SUCC ><p style="color:green" >{{message}}</p></ng-template>
+<ng-template #FAIL><p style="color:red" >{{message}}</p></ng-template>
+  <h1 style="overflow:inherit;"><span class="glyphicon glyphicon-education">College</span></h1>
+  <form>
+    <div class="form-group">
+
+      <label>Name:</label>
+      <input [(ngModel)] = "form.name" name="fname" type="text" class="form-control" required>
+      <td style="color: red;">{{inputError.name}}</td>
+      <label>Address:</label>
+      <input [(ngModel)]="form.address" name="lname" type="text" class="form-control" required>
+      <td style="color:red">{{inputError.address}}</td>
+      <label>City:</label>
+      <input [(ngModel)]="form.city" name="location" type="text" class="form-control" required>
+      <td style="color:red">{{inputError.city}}</td>
+      <label>Phone No:</label>
+      <input [(ngModel)]="form.phoneNo" name="mobileno" type="text" class="form-control" required>
+      <td style="color:red">{{inputError.phoneNo}}</td>
+      <label>State:</label>
+      <input [(ngModel)]="form.state" name="state" type="text" class="form-control" required>
+      <td style="color:red">{{inputError.state}}</td>
+    </div>
+    <button (click)="save()" class="btn btn-primary">Save</button>
+    &nbsp; <button (click)="search()" class="btn btn-primary">Search</button>
+  </form>
+</div>

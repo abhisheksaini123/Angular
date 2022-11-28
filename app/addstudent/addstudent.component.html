@@ -1,0 +1,28 @@
+<!-- <app-navbar2></app-navbar2> -->
+<div class="container">
+    <div *ngIf="success == true; then SUCC else FAIL"></div>
+    <ng-template #SUCC ><p style="color:green" >{{message}}</p></ng-template>
+    <ng-template #FAIL><p style="color:red" >{{message}}</p></ng-template>
+    <h1 style="overflow:inherit;"><span class="glyphicon glyphicon-user">Add Student</span></h1>
+    <!-- <P style="color:green;">{{message}}</P> -->
+    <form>
+        <div class="form-group">
+            
+                <label>First Name:</label><span class="glyphicon glyphicon-user"></span>
+                
+                <input [(ngModel)] = "form.firstName" name="f name" type="text" class="form-control" required> <td style="color: red;">{{inputError.firstName}}</td>
+                <label>Last Name:</label><span class="glyphicon glyphicon-user"></span>
+                <input [(ngModel)] ="form.lastName"  name="l name" type="text" class="form-control" required ><td style="color:red">{{inputError.lastName}}</td>
+                <label>Email Id:</label><span class="glyphicon glyphicon-envelope"></span>
+                <input [(ngModel)] ="form.email"  name="email" type="text" class="form-control" required ><td style="color:red">{{inputError.email}}</td>
+                <label>Mob No:</label><span class="glyphicon glyphicon-phone"></span>
+                <input [(ngModel)] ="form.mobileNo"  name="mobileno" type="text" class="form-control" required ><td style="color:red">{{inputError.mobileNo}}</td>
+                <label>College Id:</label><span class="glyphicon glyphicon-lock"></span>
+                <input [(ngModel)] ="form.collegeId"  name="id" type="text" class="form-control" required ><td style="color:red">{{inputError.collegeId}}</td>
+            
+            </div>
+    
+        
+            <button (click)="save()" class="btn btn-primary">Save</button>
+    </form>
+    </div>

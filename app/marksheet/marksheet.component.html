@@ -1,0 +1,43 @@
+<!-- <app-navbar2></app-navbar2> -->
+<div class="container">
+    <div *ngIf="success == true; then SUCC else FAIL"></div>
+    <ng-template #SUCC>
+        <p style="color:green">{{message}}</p>
+    </ng-template>
+    <ng-template #FAIL>
+        <p style="color:red">{{message}}</p>
+    </ng-template>
+    <h1 style="overflow:inherit;">
+        <span class="glyphicon glyphicon-edit">Add Marksheet</span>
+    </h1>
+
+    <form>
+        <div class="form-group">
+
+            <label>Roll No</label>
+            <input [(ngModel)]="form.rollNo" name="rollNo" type="text" class="form-control" required>
+            <span style="color: red;">{{inputError.rollNo}}</span>
+
+
+            <label>Name</label>
+            <input [(ngModel)]="form.name" name="name" type="text" class="form-control">
+            <span style="color: red;">{{inputError.name}}</span>
+
+            <label>Physics</label>
+            <input [(ngModel)]="form.physics" name="physics" type="text" class="form-control">
+            <span style="color: red;">{{inputError.physics}}</span>
+
+            <label>Chemistry</label>
+            <input [(ngModel)]="form.chemistry" name="chemistry" type="text" class="form-control">
+            <span style="color: red;">{{inputError.chemistry}}</span>
+
+            <label>Maths</label>
+            <input [(ngModel)]="form.maths" name="maths" type="text" class="form-control">
+            <span style="color: red;">{{inputError.maths}}</span>
+
+            <td><button (click)="save()" class="btn btn-primary">Save</button></td>
+            <td><button (click)="search()" class="btn btn-primary">Search</button></td>
+
+        </div>
+    </form>
+</div>

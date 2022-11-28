@@ -1,0 +1,19 @@
+.container{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: linear-gradient(120deg,#c37fff, #d792dd6e);
+    border-radius: 7px;
+    box-shadow: 10px 15px 25px rgba(7, 7, 7, 0.7);
+    border-bottom: 10px solid #a09bbb;
+   
+   
+    
+  }
+
+  .container form{
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
